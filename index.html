@@ -35,6 +35,14 @@
 .adj-n{display:flex;align-items:center;gap:6px;min-width:0;flex:1;font-size:13px}.adj-n svg{width:14px;height:14px;flex:none;color:var(--ink-3)}.adj-n span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .adj-s{font-size:12px;color:var(--ink-3);flex:none}.adj-m{font-size:12px;color:var(--ink-3)}
 .adj.bad{border-color:#f0c3c6;background:#fff6f6}.adj.bad .adj-m{color:var(--red-d)}
+
+.imp-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 12px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line)}
+.imp-row b{display:block;font-size:13.5px}
+.imp-row small{display:block;color:var(--ink-3);font-size:12px;margin-top:2px}
+.imp-row select{min-width:190px;max-width:100%}
+.imp-sub{display:grid;gap:4px;padding:8px 0 8px 14px;border-bottom:1px solid var(--line)}
+.imp-sub small{margin-top:4px}
+:host([data-w="sm"]) .imp-row{grid-template-columns:minmax(0,1fr)}
 </script>
 <script id="app-logo" type="text/plain">data:image/png;base64,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</script>
 <script>
@@ -1118,6 +1126,248 @@ async function importJSON(file) {
     toast('Respaldo restaurado.', '', 'Deshacer', () => { if (undoSnapshot()) toast('Se restauró la base anterior.'); });
   } catch (e) { LOG('importJSON', e); toast('No pude restaurar el respaldo: ' + (e.message || e), 'err'); }
 }
+/* =====================================================================
+   Importar de otra versión (HTML con datos o JSON)
+   Trae el organigrama, los datos maestros, el registro de horas y las revisiones semanales de OTRO archivo de la aplicación
+   (p. ej. la v13) sin tocar los proyectos y tareas de esta base. El Excel de «línea base» no los trae.
+   Las horas apuntan a proyectos por identificador y esos identificadores cambian al cargar un Excel: por eso se reasignan
+   a los proyectos de esta base por cualquiera de sus tres códigos o, si no, por nombre (igual que la línea base).
+   ===================================================================== */
+const IMP_MAE = [
+  ['empresas', 'Empresas', r => r.empresa], ['estados', 'Estados', r => r.nombre], ['prioridades', 'Prioridades', r => r.nombre], ['niveles', 'Responsabilidades', r => r.nombre],
+  ['jp', 'JP', r => r.nombre], ['pm', 'PM (líder de proyecto)', r => r.nombre], ['responsables', 'Responsables', r => r.nombre], ['etapas', 'Etapas', etKey],
+  ['estadosTarea', 'Estados de tarea', r => r.k], ['categoriasHoras', 'Categorías de horas', r => r.nombre], ['feriados', 'Feriados', r => r.fecha]];
+const impInfo = (title, html) => dlg2(`<div class="dh"><h3>${esc(title)}</h3></div><div class="db">${html}</div><div class="df"><span class="sp"></span><button type="button" class="btn pri" data-r="1">Entendido</button></div>`);
+const impKey = (f, r) => norm(f(r));
+const sumH = L => hr1(L.reduce((a, h) => a + (+h.horas || 0), 0));
+const ogSig = L => JSON.stringify((L || []).map(n => [n.id, n.cargo, n.nombre, n.padre || '', n.area, !!n.vacante, n.nota, n.orden]).sort());
+
+async function impLeer(file) {
+  const txt = await file.text();
+  const sinDatos = () => Object.assign(new Error('sin datos'), { sinDatos: true });
+  let d = null;
+  if (/\.html?$/i.test(file.name) || /^\s*</.test(txt)) {
+    const re = /\bid\s*=\s*["']seed-db["']/g; let m;
+    while ((m = re.exec(txt))) {
+      const a = txt.indexOf('>', m.index), b = a < 0 ? -1 : txt.indexOf('</' + 'script>', a); if (b < 0) break;
+      const body = txt.slice(a + 1, b).trim(); if (!body) continue;
+      try { const j = JSON.parse(body); if (j && Array.isArray(j.proyectos)) { d = j; break; } } catch (e) { /* era texto de código y no el bloque de datos */ }
+    }
+    if (!d) throw sinDatos();
+  } else {
+    try { d = JSON.parse(txt); } catch (e) { throw new Error('El archivo no es un HTML de la aplicación ni un JSON válido.'); }
+    if (d && d.format === 'gloria-seguimiento' && d.db) d = d.db;
+    if (!d || !Array.isArray(d.proyectos)) throw new Error('El JSON no parece un respaldo de esta aplicación.');
+  }
+  if (Number(d.v) > DB_VERSION) throw new Error(`Los datos de ese archivo son de una versión más nueva (v${d.v}); esta copia entiende hasta la v${DB_VERSION}. Usa la copia más reciente de la aplicación.`);
+  const rm = d.maestros || {}, ne = k => Array.isArray(rm[k]) && rm[k].length > 0;
+  const has = { org: ne('organigrama'), horas: Array.isArray(d.horas) && d.horas.length > 0, rev: Array.isArray(d.revisiones) && d.revisiones.length > 0, par: !!d.parametros && typeof d.parametros === 'object', mae: {} };
+  IMP_MAE.forEach(([k]) => { has.mae[k] = ne(k); });
+  if (!d.proyectos.length && !has.org && !has.horas && !has.rev && !IMP_MAE.some(([k]) => has.mae[k])) throw sinDatos();
+  const db = normalizeDB(clone(d));
+  const pmap = new Map(), ix = projIndex(DB.proyectos);
+  db.proyectos.forEach(sp => pmap.set(sp.id, findProj(ix, sp) || null));
+  return { db, has, pmap, pById: new Map(db.proyectos.map(p => [p.id, p])), name: file.name, ver: d.v || '' };
+}
+
+/* Plan de horas: qué líneas se agregarían (sin tocar nada si `commit` es falso) */
+function impPlanHoras(S, o, commit) {
+  const rep = o.modo === 'repl', cur = rep ? [] : DB.horas, M = DB.maestros, catCur = M.categoriasHoras = M.categoriasHoras || [];
+  const srcCat = new Map((S.db.maestros.categoriasHoras || []).map(c => [c.id, c])), memo = new Map(), nuevasCat = new Set();
+  const addCat = (row, base) => {
+    const id = catCur.some(c => c.id === row.id) ? uid() : row.id;
+    if (commit) catCur.push(Object.assign({ codigo: 'NNXXA00001' }, clone(row), { id, activo: row.activo !== false })); else nuevasCat.add(norm(row.nombre));
+    return id;
+  };
+  let otros = null;
+  const otrosId = () => {
+    if (otros) return otros;
+    const f = catCur.find(c => norm(c.nombre) === 'otros'); if (f) return (otros = f.id);
+    return (otros = addCat({ id: 'ch-otr', nombre: 'Otros', codigo: 'NNXXA00001', activo: true }));
+  };
+  const catId = sid => {
+    if (memo.has(sid)) return memo.get(sid);
+    const sc = srcCat.get(sid); let r = null;
+    const byId = catCur.find(c => c.id === sid);
+    if (byId && (!sc || norm(byId.nombre) === norm(sc.nombre))) r = byId.id;
+    if (!r && sc) { const bn = catCur.find(c => norm(c.nombre) === norm(sc.nombre)); if (bn) r = bn.id; }
+    if (!r && sc) r = addCat(sc);
+    if (!r) r = otrosId();
+    memo.set(sid, r); return r;
+  };
+  const acc = new Map(), un = new Map(); let inval = 0, tot = 0;
+  (S.db.horas || []).forEach(h => {
+    const user = String(h.usuario || '').trim().replace(/\s+/g, ' ');
+    if (!hIso(h.fecha) || !user || !(+h.horas >= 0)) { inval++; return; }
+    tot++;
+    let pid = '', cat = '', mot = String(h.motivo || '');
+    if (h.proyectoId) {
+      const c = S.pmap.get(h.proyectoId);
+      if (c) pid = c.id;
+      else {
+        const sp = S.pById.get(h.proyectoId), nom = sp ? sp.nombre : 'proyecto desconocido';
+        const u = un.get(h.proyectoId) || { nombre: nom, n: 0, h: 0 }; u.n++; u.h += +h.horas || 0; un.set(h.proyectoId, u);
+        if (!o.otros) return;
+        cat = otrosId(); mot = `[${nom}] ${mot}`.trim();
+      }
+    } else cat = catId(h.categoria);
+    const key = pid ? 'p:' + pid : 'c:' + cat, k = h.fecha + '|' + norm(user) + '|' + key, a = acc.get(k);
+    if (a) { a.horas = hr1(a.horas + (+h.horas || 0)); if (mot && !a.motivo.includes(mot)) a.motivo = a.motivo ? a.motivo + '; ' + mot : mot; }
+    else acc.set(k, { id: h.id || uid(), fecha: h.fecha, usuario: user, proyectoId: pid, categoria: pid ? '' : cat, horas: hr1(h.horas), motivo: mot, _k: k });
+  });
+  const have = new Map(cur.map(h => [h.fecha + '|' + norm(h.usuario) + '|' + hKeyOf(h), h])), ids = new Set(cur.map(h => h.id));
+  const add = []; let same = 0, conf = 0;
+  acc.forEach(l => {
+    const e = have.get(l._k);
+    if (e) { if (Math.abs((+e.horas || 0) - l.horas) < 0.05 && norm(e.motivo) === norm(l.motivo)) same++; else conf++; return; }
+    delete l._k; if (ids.has(l.id)) l.id = uid(); ids.add(l.id); add.push(l);
+  });
+  const unl = [...un.values()];
+  return { add, same, conf, inval, tot, un: unl, unN: unl.reduce((a, u) => a + u.n, 0), unH: hr1(unl.reduce((a, u) => a + u.h, 0)), nuevasCat: nuevasCat.size, horas: sumH(add) };
+}
+function impPlanRev(S) {
+  const have = new Set((DB.revisiones || []).map(r => r.id)), add = []; let omit = 0;
+  (S.db.revisiones || []).forEach(r => {
+    const c = S.pmap.get(r.proyectoId); if (!c) { omit++; return; }
+    const id = 'rv-' + r.sem + '-' + c.id; if (have.has(id)) return;
+    have.add(id); add.push(Object.assign({}, r, { id, proyectoId: c.id }));
+  });
+  return { add, omit };
+}
+/* Maestros: filas del archivo cuya clave natural aún no existe aquí */
+function impNuevosMae(S, k) {
+  const f = IMP_MAE.find(x => x[0] === k)[2], have = new Set((DB.maestros[k] || []).map(r => impKey(f, r)));
+  return (S.db.maestros[k] || []).filter(r => { const q = impKey(f, r); return q && !have.has(q); });
+}
+function impPlanOrg(S) {
+  const L = S.db.maestros.organigrama || [], cur = DB.maestros.organigrama || [];
+  const nk = n => norm(n.cargo) + '|' + norm(n.nombre), byId = new Map(cur.map(n => [n.id, n])), byNk = new Map(cur.map(n => [nk(n), n]));
+  const idMap = new Map(), nuevos = [];
+  L.forEach(n => { const e = byId.get(n.id); if (e && nk(e) === nk(n)) idMap.set(n.id, e.id); else { const q = byNk.get(nk(n)); if (q) idMap.set(n.id, q.id); else nuevos.push(n); } });
+  return { L, idMap, nuevos, igual: ogSig(L) === ogSig(cur) };
+}
+
+function impApply(S, sel) {
+  snapshotUndo('importación');
+  const M = DB.maestros, res = [];
+  /* organigrama */
+  if (sel.org !== 'no' && S.has.org) {
+    const P = impPlanOrg(S);
+    if (sel.org === 'repl') { M.organigrama = clone(P.L); res.push(`organigrama (${P.L.length} niveles)`); }
+    else {
+      const cur = M.organigrama = M.organigrama || [], taken = new Set(cur.map(n => n.id)), map = new Map(P.idMap);
+      P.nuevos.forEach(n => { const id = taken.has(n.id) ? uid() : n.id; taken.add(id); map.set(n.id, id); });
+      P.nuevos.forEach(n => { const c = clone(n); c.id = map.get(n.id); c.padre = n.padre ? (map.get(n.padre) || '') : ''; cur.push(c); });
+      if (P.nuevos.length) res.push(`organigrama (+${P.nuevos.length} ${plural(P.nuevos.length, 'nivel', 'niveles')})`);
+    }
+    ogFix(M);
+  }
+  /* maestros */
+  if (sel.mae !== 'no') {
+    let nAdd = 0;
+    sel.listas.forEach(k => {
+      const f = IMP_MAE.find(x => x[0] === k)[2], from = S.db.maestros[k] || [];
+      if (sel.mae === 'repl' && k !== 'categoriasHoras') { M[k] = clone(from); nAdd += from.length; return; }   // las categorías de horas siempre se combinan: las horas las referencian por id
+      const cur = M[k] = M[k] || [], have = new Set(cur.map(r => impKey(f, r))), ids = new Set(cur.map(r => r.id));
+      from.forEach(r => { const q = impKey(f, r); if (!q || have.has(q)) return; have.add(q); const c = clone(r); if (ids.has(c.id)) c.id = uid(); ids.add(c.id); cur.push(c); nAdd++; });
+    });
+    if (sel.params && S.db.parametros) ['horasDia', 'diaRevision'].forEach(k => { if (S.db.parametros[k] != null) DB.parametros[k] = S.db.parametros[k]; });
+    if (nAdd || sel.params) res.push(`maestros (${nAdd} ${plural(nAdd, 'fila', 'filas')}${sel.params ? ' y parámetros' : ''})`);
+  }
+  /* horas (después de los maestros: usa sus categorías) */
+  if (sel.horas.modo !== 'no' && S.has.horas) {
+    const P = impPlanHoras(S, sel.horas, true);
+    DB.horas = sel.horas.modo === 'repl' ? P.add : DB.horas.concat(P.add);
+    res.push(`${P.add.length} ${plural(P.add.length, 'línea', 'líneas')} de horas (${P.horas} h)`);
+  }
+  if (sel.rev !== 'no' && S.has.rev) { const P = impPlanRev(S); DB.revisiones = (DB.revisiones || []).concat(P.add); if (P.add.length) res.push(`${P.add.length} ${plural(P.add.length, 'revisión', 'revisiones')}`); }
+  completeMasters(DB, null);
+  DB.updatedAt = nowISO();               // sin cambiar `epoch`: en la base compartida se FUSIONA con lo que otras personas hayan hecho
+  reindex(); persistNow(); renderAll();
+  return res;
+}
+
+function impDialog(S) {
+  const nPr = S.db.proyectos.length, nOk = [...S.pmap.values()].filter(Boolean).length, w = canEdit();
+  const org = impPlanOrg(S), nOrgCur = (DB.maestros.organigrama || []).length;
+  const maeRows = IMP_MAE.filter(([k]) => S.has.mae[k]).map(([k, l]) => ({ k, l, n: (S.db.maestros[k] || []).length, nuevos: impNuevosMae(S, k).length }));
+  const parDif = S.has.par && S.db.parametros && ['horasDia', 'diaRevision'].some(k => S.db.parametros[k] != null && S.db.parametros[k] !== DB.parametros[k]);
+  const maeDif = maeRows.some(r => r.nuevos) || parDif;
+  const DIAS = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+  const opt = (v, t, sel) => `<option value="${v}"${sel ? ' selected' : ''}>${t}</option>`;
+  const orgDef = !S.has.org ? 'no' : org.igual ? 'no' : 'repl';
+  const maeDef = !S.has.par && !maeRows.length ? 'no' : maeDif ? 'comb' : 'no';
+  const hrsDef = S.has.horas ? 'comb' : 'no', revDef = S.has.rev ? 'comb' : 'no';
+  const row = (id, titulo, info, selHTML) => `<div class="imp-row"><div><b id="imp-${id}-t">${titulo}</b><small id="imp-${id}-i" aria-live="polite">${info}</small></div>${selHTML}</div>`;
+  const selEl = (name, label, html, off) => `<select name="${name}" aria-labelledby="imp-${name}-t"${off ? ' disabled' : ''}>${html}</select>`;
+  const html = `<div class="dh"><h3>Importar de otra versión</h3></div><div class="db">
+    <p style="margin:0 0 6px"><b>${esc(S.name)}</b> · se lee solo en este navegador${S.ver ? ` · datos de la versión ${esc(S.ver)}` : ''}.</p>
+    <div class="stat3"><div><b>${nPr}</b><span>proyectos en el archivo</span></div><div><b>${nOk}</b><span>coinciden con esta base (por código o nombre)</span></div><div><b>${(S.db.horas || []).length}</b><span>líneas de horas en el archivo</span></div></div>
+    <p class="muted" style="margin:0 0 4px;font-size:13px">Los proyectos y tareas de esta base <b>no se tocan</b>. Elige qué traer; las horas se asignan a los proyectos de esta base que coinciden.</p>
+    ${row('org', 'Organigrama', S.has.org ? `${org.L.length} ${plural(org.L.length, 'nivel', 'niveles')} en el archivo · ${nOrgCur} aquí${org.igual ? ' · es idéntico al actual' : ''}${org.nuevos.length && !org.igual ? ` · ${org.nuevos.length} no existen aquí` : ''}` : 'El archivo no trae organigrama.',
+      selEl('org', '', S.has.org ? opt('repl', 'Reemplazar el actual', orgDef === 'repl') + opt('comb', 'Combinar (agregar los que faltan)', false) + opt('no', 'No traer', orgDef === 'no') : opt('no', 'No disponible'), !S.has.org))}
+    ${row('mae', 'Datos maestros', maeRows.length || S.has.par ? (maeDif ? 'Hay valores del archivo que aquí no existen.' : 'Sin diferencias con los de esta base.') : 'El archivo no trae maestros.',
+      selEl('mae', '', maeRows.length || S.has.par ? opt('comb', 'Combinar (agregar los que faltan)', maeDef === 'comb') + opt('repl', 'Reemplazar las listas marcadas', false) + opt('no', 'No traer', maeDef === 'no') : opt('no', 'No disponible'), !maeRows.length && !S.has.par))}
+    <div class="imp-sub" id="imp-lst"${maeRows.length || parDif ? '' : ' hidden'}>${maeRows.map(r => `<label class="chk-l"><input type="checkbox" data-lst="${r.k}"${r.nuevos ? ' checked' : ''}> ${esc(r.l)} <span class="muted">· ${r.n} en el archivo${r.nuevos ? `, ${r.nuevos} ${plural(r.nuevos, 'nueva', 'nuevas')}` : ''}</span></label>`).join('')}
+      ${parDif ? `<label class="chk-l"><input type="checkbox" name="par" checked> Parámetros <span class="muted">· horas por día ${esc(String(DB.parametros.horasDia))} → ${esc(String(S.db.parametros.horasDia))}, revisión semanal: ${esc(DIAS[DB.parametros.diaRevision] || '')} → ${esc(DIAS[S.db.parametros.diaRevision] || '')}</span></label>` : ''}
+      <small class="muted">«Combinar» solo agrega lo que falta. «Reemplazar» sustituye por completo cada lista marcada (las categorías de horas siempre se combinan).</small></div>
+    ${row('hrs', 'Registro de horas', '', selEl('hrs', '', S.has.horas ? opt('comb', 'Combinar (agregar las que faltan)', true) + opt('repl', 'Reemplazar las actuales', false) + opt('no', 'No traer', false) : opt('no', 'No disponible'), !S.has.horas))}
+    <label class="chk-l" id="imp-otros-l"${S.has.horas ? '' : ' hidden'}><input type="checkbox" name="otros"> Si un proyecto del archivo no existe aquí, registrar sus horas en la categoría «Otros» con el nombre del proyecto en el motivo</label>
+    ${row('rev', 'Revisión semanal', S.has.rev ? `${(S.db.revisiones || []).length} revisiones en el archivo` : 'El archivo no trae revisiones.', selEl('rev', '', S.has.rev ? opt('comb', 'Combinar (agregar las que faltan)', true) + opt('no', 'No traer', false) : opt('no', 'No disponible'), !S.has.rev))}
+    ${IS_SP ? '<label class="chk-l ok-l" id="imp-ok-l" hidden><input type="checkbox" id="imp-ok"> Entiendo que «Reemplazar» sustituye esos datos en la base compartida de todo el equipo</label>' : ''}
+    <p class="fmsg err" role="alert" id="imp-err" hidden></p>
+    </div><div class="df"><span class="sp"></span><button type="button" class="btn" data-r="0">Cancelar</button><button type="button" class="btn pri" id="imp-go">Importar</button></div>`;
+  let SEL = null;
+  return dlg2(html, (d, finish) => {
+    const $q = s => d.querySelector(s), val = n => ($q(`[name="${n}"]`) || {}).value || 'no';
+    const upd = () => {
+      const hm = val('hrs'), oc = $q('[name=otros]') ? $q('[name=otros]').checked : false, cm = val('mae');
+      d.querySelectorAll('[data-lst],[name=par]').forEach(c => { c.disabled = cm === 'no'; });
+      if ($q('#imp-otros-l')) $q('#imp-otros-l').hidden = !S.has.horas || hm === 'no';
+      const hi = $q('#imp-hrs-i');
+      if (!S.has.horas) hi.textContent = 'El archivo no trae horas.';
+      else {
+        const P = impPlanHoras(S, { modo: hm === 'repl' ? 'repl' : 'comb', otros: oc }, false), t = [];
+        t.push(hm === 'repl' ? `Se reemplazan las ${DB.horas.length} líneas actuales por ${P.add.length} (${P.horas} h)` : `Se agregan ${P.add.length} ${plural(P.add.length, 'línea', 'líneas')} (${P.horas} h)`);
+        if (hm !== 'repl' && P.same) t.push(`${P.same} ya estaban (se omiten)`);
+        if (hm !== 'repl' && P.conf) t.push(`${P.conf} coinciden en persona, día y proyecto con otras horas (se conserva lo actual)`);
+        if (P.un.length) t.push(`${P.un.length} ${plural(P.un.length, 'proyecto del archivo no existe', 'proyectos del archivo no existen')} aquí (${P.unN} líneas, ${P.unH} h): ${oc ? 'se registran en «Otros»' : 'se omiten'} — ${P.un.slice(0, 4).map(u => u.nombre).join('; ')}${P.un.length > 4 ? '…' : ''}`);
+        if (P.nuevasCat) t.push(`se agregan ${P.nuevasCat} ${plural(P.nuevasCat, 'categoría', 'categorías')} de horas`);
+        if (P.inval) t.push(`${P.inval} líneas inválidas se descartan`);
+        hi.textContent = t.join(' · ') + '.';
+        if (hm === 'no') hi.textContent = `${(S.db.horas || []).length} líneas en el archivo.`;
+      }
+      const any = val('org') !== 'no' || (cm !== 'no') || hm !== 'no' || val('rev') !== 'no', ok = $q('#imp-ok'), repl = [val('org'), cm, hm].includes('repl');
+      if (ok) $q('#imp-ok-l').hidden = !repl;
+      $q('#imp-go').disabled = !any || (ok && repl && !ok.checked);
+    };
+    d.addEventListener('change', upd); upd();
+    $q('#imp-go').onclick = () => {
+      SEL = { org: val('org'), mae: val('mae'), listas: [...d.querySelectorAll('[data-lst]:checked')].map(x => x.dataset.lst), params: !!($q('[name=par]') && $q('[name=par]').checked),
+        horas: { modo: val('hrs'), otros: !!($q('[name=otros]') && $q('[name=otros]').checked) }, rev: val('rev') };
+      if (SEL.mae !== 'no' && !SEL.listas.length && !SEL.params) { const e = $q('#imp-err'); e.textContent = 'Marca al menos una lista de maestros, o elige «No traer».'; e.hidden = false; return; }
+      finish(true);
+    };
+  }).then(ok => ok ? SEL : null);
+}
+
+async function importarOtraVersion(file) {
+  if (!file) return;
+  if (!canEdit()) { toast(MSG_RO, 'err'); return; }
+  let S;
+  try { S = await impLeer(file); }
+  catch (e) {
+    if (e.sinDatos) { impInfo('Ese archivo no trae datos', `<p style="margin:0 0 8px">${esc(file.name)} es la aplicación, pero <b>sin datos incorporados</b>. En una versión anterior los datos viven en el navegador donde se usaba, no dentro del archivo.</p><p style="margin:0">Ábrela en ese mismo navegador y usa el menú → <b>Guardar HTML con datos</b> (o <b>Descargar respaldo (JSON)</b>); luego elige aquí el archivo que se descarga.</p>`); }
+    else { LOG('importarOtraVersion', e); toast(e.message || 'No pude leer el archivo.', 'err'); }
+    return;
+  }
+  const sel = await impDialog(S); if (!sel) return;
+  try {
+    const res = impApply(S, sel);
+    toast(res.length ? 'Importado: ' + res.join(', ') + '.' : 'No había nada nuevo que importar.', '', res.length ? 'Deshacer' : null, res.length ? () => { if (undoSnapshot()) toast('Se restauró la base anterior.'); } : null);
+  } catch (e) { LOG('impApply', e); toast('No pude importar: ' + (e.message || e), 'err'); if (UNDO) undoSnapshot(); }
+}
+
 async function resetToSeed() {
   if (!canEdit()) { toast(MSG_RO, 'err'); return; }
   const s = seedDB(); if (!s || !s.proyectos.length) { toast('Este HTML no incluye una base original.', 'err'); return; }
@@ -3817,6 +4067,7 @@ function renderMenu() {
     + (IS_SP ? '' : it('savehtml', 'Guardar HTML con datos', 'Descarga este mismo HTML con la base de datos incluida'))
     + '<hr>' + it('json', 'Descargar respaldo (JSON)', IS_SP ? 'Copia completa de la base compartida' : 'Copia completa de la base local')
     + it('jsonload', 'Restaurar respaldo (JSON)', IS_SP ? 'Reemplaza la base compartida por un respaldo' : 'Reemplaza la base local por un respaldo', 'edit-only')
+    + it('otraver', 'Importar de otra versión (HTML o JSON)', 'Trae organigrama, maestros, horas y revisiones de un archivo de otra versión (p. ej. la v13)', 'edit-only')
     + (IS_SP ? '<hr>' + it('refresh', 'Actualizar ahora', 'Busca cambios hechos por otras personas') + (IS_NET ? it('netinfo', 'Conexión…', 'Dirección del servicio, clave y desconexión') + it('netlink', 'Copiar enlace de acceso', 'Para abrir la aplicación en otro equipo o celular') : '') : '<hr>' + it('netsetup', 'Conectar a la base compartida…', 'Trabajar en equipo desde cualquier dispositivo (Google Sheets)') + it('reset', 'Restablecer a la base original', 'Vuelve a la base incluida en este HTML', 'edit-only') + it('wipe', 'Borrar datos de este navegador', 'Elimina la copia local guardada', 'edit-only'));
 }
 function renderChips() {
@@ -4026,6 +4277,7 @@ function menuAction(a) {
   else if (a === 'savehtml') saveHTML();
   else if (a === 'json') exportJSON();
   else if (a === 'jsonload') { if (!canEdit()) toast(MSG_RO, 'err'); else $('#file-json').click(); }
+  else if (a === 'otraver') { if (!canEdit()) toast(MSG_RO, 'err'); else $('#file-otra').click(); }
   else if (a === 'reset') resetToSeed();
   else if (a === 'wipe') wipeLocal();
 }
@@ -4102,6 +4354,7 @@ function onChange(e) {
   else if (t.id === 'corte') { CORTE = t.value || isoDate(new Date()); renderAll(); }
   else if (t.id === 'file-xlsx') { handleExcelFile(t.files[0]); t.value = ''; }
   else if (t.id === 'file-json') { importJSON(t.files[0]); t.value = ''; }
+  else if (t.id === 'file-otra') { importarOtraVersion(t.files[0]); t.value = ''; }
 }
 let qTimer = null;
 function onInput(e) {
@@ -4645,7 +4898,7 @@ function confirmBaseline(res, file) {
   dlg2(`<div class="dh"><h3>Cargar línea base</h3></div><div class="db">
     <p style="margin:0 0 6px"><b>${esc(file.name)}</b> · se procesa solo en este navegador.</p>
     <div class="stat3"><div><b>${db.proyectos.length}</b><span>proyectos (hoja Seguimiento)</span></div><div><b>${db.tareas.length}</b><span>tareas ${res.tareasDeHoja ? 'de la hoja Tareas' : 'detectadas en “Tarea (Foco de Hoy)” y “Cerrados”'}</span></div><div><b>${M.empresas.length}</b><span>empresas en el maestro</span></div></div>
-    <p class="muted" style="margin:0 0 8px;font-size:13px">Maestros leídos: ${M.estados.length} estados · ${M.prioridades.length} prioridades · ${M.niveles.length} responsabilidades · ${M.jp.length} JP · ${M.responsables.length} responsables · ${M.etapas.length} etapas · ${db.framework.length} filas de framework.</p>
+    <p class="muted" style="margin:0 0 8px;font-size:13px">Maestros leídos: ${M.estados.length} estados · ${M.prioridades.length} prioridades · ${M.niveles.length} responsabilidades · ${M.jp.length} JP · ${M.responsables.length} responsables · ${M.etapas.length} etapas · ${db.framework.length} filas de framework.<br>El Excel no incluye organigrama, registro de horas ni revisiones: se conservan los actuales. Para traerlos de otra versión usa el menú → «Importar de otra versión».</p>
     ${hay ? `<div class="note warn"><b>Esto reemplaza los datos actuales${IS_SP ? ' de todo el equipo' : ''}:</b> ${DB.proyectos.length} proyectos y sus maestros, etapas e historial de las tareas importadas. ${a.matched ? `${a.matched} proyectos coinciden por código o nombre y conservan su identidad (+${a.added} nuevos, ${a.removed} que ya no vienen en el Excel).` : 'Ningún proyecto actual coincide con el Excel.'} ${a.manual ? `Tareas creadas en la app: se conservan ${a.keep} de ${a.manual}${a.drop ? `; ${a.drop} se descartarán porque su proyecto no existe en el nuevo Excel` : ''}.` : ''} ${IS_SP ? 'Podrás deshacerlo ahora o recuperar la versión anterior desde el historial de versiones del archivo en SharePoint.' : 'Podrás deshacerlo.'}</div>` : ''}
     ${res.warn.length || res.info.length ? `<div class="sect">Observaciones</div><ul class="pl2">${[...res.warn, ...res.info].map(w => `<li>${esc(w)}</li>`).join('')}</ul>` : ''}
     ${shared ? '<label class="chk-l ok-l"><input type="checkbox" id="bl-ok"> Entiendo que esto reemplaza la base compartida</label>' : ''}
@@ -5428,7 +5681,7 @@ const APP_HTML = `<button type="button" class="skip" data-act="skip">Saltar al c
   <section class="view" id="v-org" aria-label="Organigrama"></section>
   <section class="view" id="v-mae" aria-label="Maestros"></section>
 </main>
-<input type="file" id="file-xlsx" accept=".xlsx,.xlsm,.xls" hidden tabindex="-1" aria-hidden="true"><input type="file" id="file-json" accept=".json,application/json" hidden tabindex="-1" aria-hidden="true">`;
+<input type="file" id="file-xlsx" accept=".xlsx,.xlsm,.xls" hidden tabindex="-1" aria-hidden="true"><input type="file" id="file-json" accept=".json,application/json" hidden tabindex="-1" aria-hidden="true"><input type="file" id="file-otra" accept=".html,.htm,.json,text/html,application/json" hidden tabindex="-1" aria-hidden="true">`;
 const PORTAL_HTML = `<dialog id="dlg" aria-modal="true"></dialog><dialog id="dlg2" class="sm" aria-modal="true"></dialog>
 <div id="tip" aria-hidden="true"></div>
 <div id="toasts" popover="manual" aria-live="polite"></div>
