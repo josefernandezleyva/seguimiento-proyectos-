@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Enviar a Kanban · complemento de Outlook (manifiesto XML para Outlook clásico, nuevo, web y Mac). NO se validó contra un Outlook real: al cargarlo,
+     si Outlook lo rechaza, el mensaje de error indica la línea; también puedes validarlo con «npx office-addin-manifest validate manifest.xml».
+     ANTES DE USARLO: reemplaza https://TU-USUARIO.github.io/seguimiento-proyectos por la dirección real de tu GitHub Pages
+     (Buscar y reemplazar en todo el archivo). Debe ser https. -->
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
+           xsi:type="MailApp">
+  <Id>6f0f6b0e-3f0b-4c63-9b52-7d1a2d0b9a41</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Seguimiento de Proyectos</ProviderName>
+  <DefaultLocale>es-PE</DefaultLocale>
+  <DisplayName DefaultValue="Enviar a Kanban"/>
+  <Description DefaultValue="Crea una tarea en el tablero Kanban de Seguimiento de Proyectos a partir del correo abierto, con su texto, imágenes y adjuntos."/>
+  <IconUrl DefaultValue="https://TU-USUARIO.github.io/seguimiento-proyectos/outlook/icon-64.png"/>
+  <HighResolutionIconUrl DefaultValue="https://TU-USUARIO.github.io/seguimiento-proyectos/outlook/icon-128.png"/>
+  <SupportUrl DefaultValue="https://TU-USUARIO.github.io/seguimiento-proyectos/"/>
+  <AppDomains>
+    <AppDomain>https://script.google.com</AppDomain>
+    <AppDomain>https://script.googleusercontent.com</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Mailbox"/>
+  </Hosts>
+  <Requirements>
+    <Sets>
+      <Set Name="Mailbox" MinVersion="1.8"/>
+    </Sets>
+  </Requirements>
+  <FormSettings>
+    <Form xsi:type="ItemRead">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://TU-USUARIO.github.io/seguimiento-proyectos/outlook/panel.html"/>
+        <RequestedHeight>450</RequestedHeight>
+      </DesktopSettings>
+    </Form>
+  </FormSettings>
+  <Permissions>ReadItem</Permissions>
+  <Rule xsi:type="RuleCollection" Mode="Or">
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read"/>
+  </Rule>
+  <DisableEntityHighlighting>false</DisableEntityHighlighting>
+
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+      <Requirements>
+        <bt:Sets DefaultMinVersion="1.8">
+          <bt:Set Name="Mailbox"/>
+        </bt:Sets>
+      </Requirements>
+      <Hosts>
+        <Host xsi:type="MailHost">
+          <DesktopFormFactor>
+            <FunctionFile resid="Commands.Url"/>
+            <ExtensionPoint xsi:type="MessageReadCommandSurface">
+              <OfficeTab id="TabDefault">
+                <Group id="gloriaGrupo">
+                  <Label resid="Grupo.Label"/>
+                  <Control xsi:type="Button" id="gloriaEnviarKanban">
+                    <Label resid="Boton.Label"/>
+                    <Supertip>
+                      <Title resid="Boton.Label"/>
+                      <Description resid="Boton.Tip"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="Icono.16"/>
+                      <bt:Image size="32" resid="Icono.32"/>
+                      <bt:Image size="80" resid="Icono.80"/>
+                    </Icon>
+                    <Action xsi:type="ShowTaskpane">
+                      <SourceLocation resid="Panel.Url"/>
+                      <SupportsPinning>true</SupportsPinning>
+                    </Action>
+                  </Control>
+                </Group>
+              </OfficeTab>
+            </ExtensionPoint>
+          </DesktopFormFactor>
+        </Host>
+      </Hosts>
+      <Resources>
+        <bt:Images>
+          <bt:Image id="Icono.16" DefaultValue="https://TU-USUARIO.github.io/seguimiento-proyectos/outlook/icon-16.png"/>
+          <bt:Image id="Icono.32" DefaultValue="https://TU-USUARIO.github.io/seguimiento-proyectos/outlook/icon-32.png"/>
+          <bt:Image id="Icono.80" DefaultValue="https://TU-USUARIO.github.io/seguimiento-proyectos/outlook/icon-80.png"/>
+        </bt:Images>
+        <bt:Urls>
+          <bt:Url id="Panel.Url" DefaultValue="https://TU-USUARIO.github.io/seguimiento-proyectos/outlook/panel.html"/>
+          <bt:Url id="Commands.Url" DefaultValue="https://TU-USUARIO.github.io/seguimiento-proyectos/outlook/commands.html"/>
+        </bt:Urls>
+        <bt:ShortStrings>
+          <bt:String id="Grupo.Label" DefaultValue="Seguimiento"/>
+          <bt:String id="Boton.Label" DefaultValue="Enviar a Kanban"/>
+        </bt:ShortStrings>
+        <bt:LongStrings>
+          <bt:String id="Boton.Tip" DefaultValue="Crea una tarea en el tablero de un proyecto a partir de este correo (texto, imágenes y adjuntos)."/>
+        </bt:LongStrings>
+      </Resources>
+    </VersionOverrides>
+  </VersionOverrides>
+</OfficeApp>
